@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Security.Cryptography;
 
 /// <summary>
 /// Renders and animates the Patient Info Paper. If no patient is assigned it hides by defualt.
@@ -19,10 +20,16 @@ public class PatientPaperRenderer : MonoBehaviour
     private TMP_Text personName;
     [SerializeField]
     private TMP_Text personDescription;
-
-    private Animator anim;
     [SerializeField]
-    private Animator folderAnim;
+    private Button folderButton;
+    [SerializeField]
+    private Button returnButton;
+    [SerializeField]
+    private Button exitButton;
+
+    private Animator[] anims;
+
+
 
     public bool isVisible;
 
@@ -32,13 +39,28 @@ public class PatientPaperRenderer : MonoBehaviour
     }
     private void Awake()
     {
-        anim= GetComponent<Animator>();
+       anims = this.transform.GetComponentsInChildren<Animator>();
+       
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        folderButton.onClick.AddListener(OpenFolder);
+        returnButton.onClick.AddListener(CloseFolder);
+        exitButton.onClick.AddListener(ExitGame);
+    }
+    private void OpenFolder()
+    {
+        this.isVisible = true;
+    }
+    private void CloseFolder()
+    {
+        this.isVisible = false;
+    }
+    private void ExitGame()
+    {
+        Application.Quit();
     }
 
     // Update is called once per frame
@@ -49,14 +71,21 @@ public class PatientPaperRenderer : MonoBehaviour
             patientImage.sprite = patient.PatientSane;
             personName.text = patient.PatientName;
             personDescription.text = patient.PatientDescription;
-            
-            this.anim.SetBool("IsVisible", isVisible);
+            foreach(Animator anim in anims)
+            {
+                anim.SetBool("IsVisible", isVisible);
+            }
+           
             
         }
         else
         {
-            this.anim.SetBool("IsVisible", false);
+            foreach (Animator anim in anims)
+            {
+                anim.SetBool("IsVisible", false);
+            }
         }
+        
         
     }
 }
