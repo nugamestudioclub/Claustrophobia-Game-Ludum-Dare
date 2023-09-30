@@ -9,7 +9,7 @@ namespace GameStateManagement
 {
     public class GameStateMachine : MonoBehaviour
     {
-        
+        public static GameStateMachine Instance;
         private GameState[] stateOrder = { GameState.Intro, GameState.Card, GameState.Placement, GameState.Effect };
        
         private GameState currentState = GameState.Intro;
@@ -53,10 +53,11 @@ namespace GameStateManagement
                 stateEventRegister.Add(state, new List<UnityAction>());
                 stateExitEventRegister.Add(state,new List<UnityAction>());
             }
-            
+            Instance = this;
             
         }
 
+       
         // Start is called before the first frame update
         void Start()
         {
