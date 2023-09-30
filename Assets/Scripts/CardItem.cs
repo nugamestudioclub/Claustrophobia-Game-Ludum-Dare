@@ -13,7 +13,15 @@ public class CardItem : ScriptableObject
     [SerializeField]
     private string description;
 
+    [SerializeField]
+    private MentalEffect effect;
+    [SerializeField]
+    [Tooltip("The value when not magnified")]
+    private float defaultMagnitude;
+
     public Sprite Sprite { get { return sprite; }  }
     public string Title { get { return title; } }
     public string Description { get { return description; } }
 }
+public enum MentalEffect {Personal, Historical, Confusing };
+
