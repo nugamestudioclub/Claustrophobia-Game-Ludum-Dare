@@ -5,6 +5,7 @@ using UnityEngine;
 public class SensorComponent : MonoBehaviour
 {
     private SensorTrigger[] triggers;
+    public bool triggered = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,18 +15,11 @@ public class SensorComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool triggered = false;
+        triggered = false;
         foreach(SensorTrigger trigger in triggers)
         {
-            triggered = trigger || trigger.IsTriggered;
+            triggered = triggered || trigger.IsTriggered;
         }
-        if (triggered)
-        {
-            foreach (SensorTrigger trigger in triggers)
-            {
-                
-                trigger.gameObject.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", Color.red);
-            }
-        }
+        
     }
 }

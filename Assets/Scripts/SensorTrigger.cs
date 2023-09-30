@@ -11,8 +11,8 @@ public class SensorTrigger : MonoBehaviour
     {
         if (other.CompareTag("Blocker"))
         {
-            print("BLOCKED by:"+other.gameObject.name);
             this.isTriggered = true;
+            this.gameObject.GetComponent<MeshRenderer>().materials[0].SetColor("_BaseColor", Color.red);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -20,6 +20,7 @@ public class SensorTrigger : MonoBehaviour
         if (other.CompareTag("Blocker"))
         {
             this.isTriggered = false;
+            this.gameObject.GetComponent<MeshRenderer>().materials[0].SetColor("_BaseColor", Color.blue);
         }
     }
     // Start is called before the first frame update

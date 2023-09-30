@@ -32,7 +32,7 @@ public class ClickOnTile : MonoBehaviour
     {
         if (GameStateMachine.Instance.CurrentState == GameState.Placement)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0)&&!sensor.GetComponent<SensorComponent>().triggered)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
