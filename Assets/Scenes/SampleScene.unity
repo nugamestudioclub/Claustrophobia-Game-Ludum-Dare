@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 24175990}
   - component: {fileID: 24175989}
   - component: {fileID: 24175992}
+  - component: {fileID: 24175993}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -205,6 +206,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 1220701037176361309, guid: b04362e4972d951449a9d9635e6f9c4c, type: 3}
+--- !u!114 &24175993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24175988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5a58deaf8cdc24fa482f7fe4b1fb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &109375298
 GameObject:
   m_ObjectHideFlags: 0
