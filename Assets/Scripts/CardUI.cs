@@ -18,6 +18,8 @@ public class Card : MonoBehaviour
     List<int> cardPosY = new List<int> { 170, 200, 210, 200, 170 };
     List<int> cardRotZ = new List<int> { 20, 10, 0, -10, -20 };
 
+    private List<Button> cards = new List<Button>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +41,9 @@ public class Card : MonoBehaviour
             GameObject card = Instantiate(cardPrefab, canvas.transform);
             card.transform.localPosition = new Vector3(cardPosX[i]+xOffset, cardPosY[i]+yOffset, 0);
             
-           // card.transform.position = new Vector3(card.transform.position.x, cardPosY[i], card.transform.position.z);
             card.transform.Rotate(0, 0, cardRotZ[i], Space.Self);
+            cards.Add(card.GetComponent<Button>());
+            
         }
 
     }
