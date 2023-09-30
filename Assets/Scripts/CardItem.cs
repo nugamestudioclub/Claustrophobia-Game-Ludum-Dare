@@ -19,9 +19,13 @@ public class CardItem : ScriptableObject
     [Tooltip("The value when not magnified")]
     private float defaultMagnitude;
 
+    [SerializeField]
+    private GameObject prefab;
+
     public Sprite Sprite { get { return sprite; }  }
     public string Title { get { return title; } }
     public string Description { get { return description; } }
+    public GameObject Prefab { get { return prefab; } }
 }
 public enum MentalEffect {Personal, Historical, Confusing };
 

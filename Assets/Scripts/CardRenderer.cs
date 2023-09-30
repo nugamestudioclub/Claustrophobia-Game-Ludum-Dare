@@ -19,6 +19,7 @@ public class CardRenderer : MonoBehaviour
     private TMP_Text title;
     [SerializeField]
     private Image cardImage;
+    public CardItem CardInfo { get { return cardInfo; } }
 
     private bool isSelected = false;
     public bool IsSelected { get { return isSelected; } }
@@ -39,10 +40,12 @@ public class CardRenderer : MonoBehaviour
     public void SetSelected()
     {
         this.isSelected = true;
+        print("Selected");
     }
     public void SetUnselected()
     {
         this.isSelected = false;
+        print("Unselected");
     }
    
     // Start is called before the first frame update
@@ -74,9 +77,6 @@ public class CardRenderer : MonoBehaviour
     void Update()
     {
         this.transform.position = Vector3.Lerp(transform.position, currentPosition, Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            ToggleShow();
-        }
+        
     }
 }

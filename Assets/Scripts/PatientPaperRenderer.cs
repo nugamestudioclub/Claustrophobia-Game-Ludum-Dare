@@ -17,6 +17,8 @@ public class PatientPaperRenderer : MonoBehaviour
     [SerializeField]
     private Image patientImage;
     [SerializeField]
+    private Image outsidePatientImage;
+    [SerializeField]
     private TMP_Text personName;
     [SerializeField]
     private TMP_Text personDescription;
@@ -69,6 +71,7 @@ public class PatientPaperRenderer : MonoBehaviour
         if(patient != null)
         {
             patientImage.sprite = patient.PatientSane;
+            outsidePatientImage.sprite = patient.PatientSane;
             personName.text = patient.PatientName;
             personDescription.text = patient.PatientDescription;
             foreach(Animator anim in anims)

@@ -15,6 +15,8 @@ public class ClickOnTile : MonoBehaviour
     private int gridSize = 5;
     [SerializeField]
     private GameObject grid;
+    [SerializeField]
+    private GameObject sensor;
 
 
     // Start is called before the first frame update
@@ -43,6 +45,22 @@ public class ClickOnTile : MonoBehaviour
                     rounded *= gridIncrement;
                     rounded += gridOffset;
                     Instantiate(objectPrefab, new Vector3(rounded.x, 1.002f, rounded.z), Quaternion.identity);
+                }
+            }
+            else
+            {
+                sensor.gameObject.SetActive(true);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit, 100) && (hit.collider.gameObject.tag == "TileMap"))
+                {
+                    Vector3 hitPoint = hit.point;
+                    hitPoint /= gridIncrement;
+                    Vector3 rounded = Vector3Int.RoundToInt(hitPoint);
+                    rounded *= gridIncrement;
+                    rounded += gridOffset;
+                    sensor.transform.position = new Vector3(rounded.x, 1.002f, rounded.z);
                 }
             }
         }
