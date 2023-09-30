@@ -25,12 +25,14 @@ public class Card : MonoBehaviour
     {
         canvas = GameObject.FindObjectOfType<Canvas>();
         CardRenderer();
+
     }
+    
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     // Renders the card in the UI
@@ -43,8 +45,47 @@ public class Card : MonoBehaviour
             
             card.transform.Rotate(0, 0, cardRotZ[i], Space.Self);
             cards.Add(card.GetComponent<Button>());
-            
+            card.GetComponent<Button>().onClick.AddListener(Clicked);
         }
 
+    }
+    public void Clicked()
+    {
+        int sel = 0;
+        for(int i = 0; i < cards.Count; i++)
+        {
+            if (cards[i].GetComponent<CardRenderer>().IsSelected)
+            {
+                sel = i;
+            }
+        }
+        HideAllButOneCard(sel);
+    }
+    public void ShowCards()
+    {
+        foreach(Button b in cards)
+        {
+            b.GetComponent<CardRenderer>().Show();
+            b.interactable = true;
+        }
+    }
+    public void HideCards()
+    {
+        foreach (Button b in cards)
+        {
+            b.GetComponent<CardRenderer>().Hide();
+            b.interactable = false;
+        }
+    }
+    public void HideAllButOneCard(int exception)
+    {
+        for(int i = 0; i < cards.Count; i++)
+        {
+            if (i != exception)
+            {
+                cards[i].GetComponent<CardRenderer>().Hide();
+                cards[i].GetComponent<Button>().interactable = false;
+            }
+        }
     }
 }

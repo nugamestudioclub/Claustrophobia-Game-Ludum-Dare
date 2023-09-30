@@ -138,6 +138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yMag: 5
+  cardInfo: {fileID: 11400000, guid: 59e923dd7c21c8046b140b2a2257141d, type: 2}
+  title: {fileID: 1131195956030396650}
+  cardImage: {fileID: 2008647265507868819}
 --- !u!114 &605095916745658966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,10 +170,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 628027712478310105}
+          m_TargetAssemblyTypeName: CardRenderer, Assembly-CSharp
+          m_MethodName: SetSelected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 628027712478310105}
+          m_TargetAssemblyTypeName: CardRenderer, Assembly-CSharp
+          m_MethodName: SetUnselected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5162004380815216265
 GameObject:
   m_ObjectHideFlags: 0

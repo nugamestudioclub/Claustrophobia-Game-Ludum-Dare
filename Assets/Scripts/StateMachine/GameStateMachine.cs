@@ -11,8 +11,9 @@ namespace GameStateManagement
     {
         public static GameStateMachine Instance;
         private GameState[] stateOrder = { GameState.Intro, GameState.Card, GameState.Placement, GameState.Effect };
-       
+        [SerializeField]
         private GameState currentState = GameState.Intro;
+       
         /// <summary>
         /// The current state we are in.
         /// </summary>
