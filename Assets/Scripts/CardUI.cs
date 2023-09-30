@@ -34,6 +34,7 @@ public class Card : MonoBehaviour
         {
             GameObject card = Instantiate(cardPrefab, canvas.transform);
             card.transform.localPosition = new Vector3(cardPosX[i], cardPosY[i], 0);
+            card.transform.position = new Vector3(card.transform.position.x, cardPosY[i], card.transform.position.z);
             card.transform.Rotate(0, 0, cardRotZ[i], Space.Self);
         }
 
