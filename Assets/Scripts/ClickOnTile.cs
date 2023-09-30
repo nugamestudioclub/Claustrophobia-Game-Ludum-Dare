@@ -22,7 +22,7 @@ public class ClickOnTile : MonoBehaviour
     {
         grid.GetComponent<MeshRenderer>().materials[0].SetVector("_Tiling", Vector2.one * gridSize);
         grid.transform.localScale = Vector3.one* gridSize*gridIncrement;
-        gridOffset = new Vector3(grid.transform.position.x +1, 0, grid.transform.position.z + 1f);
+        gridOffset = new Vector3(grid.transform.position.x-1, 0, grid.transform.position.z + 1f);
     }
 
     // Update is called once per frame
