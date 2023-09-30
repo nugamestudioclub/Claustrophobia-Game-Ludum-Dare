@@ -9,7 +9,10 @@ public class ClickOnTile : MonoBehaviour
     [SerializeField]
     private Vector3 gridOffset = Vector3.zero;
     [SerializeField]
-    private Material gridMaterial;
+    private int gridSize = 5;
+    [SerializeField]
+    private GameObject grid;
+    
 
     [SerializeField]
     GameObject cube;
@@ -17,8 +20,9 @@ public class ClickOnTile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gridMaterial.SetVector("_Tiling", Vector2.one * gridIncrement / 2);
-        gridMaterial.SetVector("_Offset", gridOffset / 20);
+        grid.GetComponent<MeshRenderer>().materials[0].SetVector("_Tiling", Vector2.one * gridSize);
+        grid.transform.localScale = Vector3.one* gridSize*gridIncrement;
+        gridOffset = new Vector3(grid.transform.position.x +1, 0, grid.transform.position.z + 1f);
     }
 
     // Update is called once per frame
@@ -29,7 +33,7 @@ public class ClickOnTile : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
