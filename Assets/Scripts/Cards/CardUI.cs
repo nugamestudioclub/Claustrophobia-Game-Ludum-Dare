@@ -25,6 +25,8 @@ public class Card : MonoBehaviour
     private List<Button> cards = new List<Button>();
     private List<bool> shownStatus = new List<bool>();
     public List<bool> ShownStatus { get { return shownStatus; } }
+    private int cardsPlaced = 0;
+    public int CardsPlace { get { return this.cardsPlaced; } }
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +74,7 @@ public class Card : MonoBehaviour
             }
         }
         HideAllButOneCard(sel);
+        cardsPlaced++;
     }
     public void RandomizeDiagrams(List<DiagramType> diagrams)
     {
@@ -86,6 +89,7 @@ public class Card : MonoBehaviour
 
     public void ShowCards()
     {
+        
         gameObject.GetComponent<CardSound>().CardsOpen();
         int counter = 0;
         foreach(Button b in cards)

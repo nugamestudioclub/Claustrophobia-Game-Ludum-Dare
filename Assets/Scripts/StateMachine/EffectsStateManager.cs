@@ -29,7 +29,10 @@ public class EffectsStateManager : IStateManager
     }
     private IEnumerator WaitForEffect()
     {
-
+        if (reportedItems.Count >= 5)
+        {
+            score.WinGame();
+        }
         yield return new WaitForSeconds(10);
         this.stateMachine.Next();
     }

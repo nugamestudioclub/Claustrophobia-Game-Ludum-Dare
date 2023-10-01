@@ -17,7 +17,7 @@ public class ScoreHandler : MonoBehaviour
     [SerializeField]
     private Volume sceneVolume;
     [SerializeField]
-    private Animator fadeOut;
+    private PatientPaperRenderer paper;
 
     private Color currentColor;
     private Color targetColor;
@@ -68,7 +68,8 @@ public class ScoreHandler : MonoBehaviour
         scoreBar.SetPoints(percentileScore);
         if (score >= maxScore)
         {
-            fadeOut.gameObject.SetActive(true);
+            
+            this.paper.ShowFinalScore("<color=red>Deceased</color>", score);
             print("YOU LOSE!");
         }
         if (score >= 4)
@@ -91,6 +92,15 @@ public class ScoreHandler : MonoBehaviour
 
         pScore = score;
     }
+    public void WinGame()
+    {
+        string insaneString = "<color=green>Insane!</color>";
+        string saneString = "<color=yellow>Sane</color>";
+        if (score > 4)
+            this.paper.ShowFinalScore(insaneString, score);
+        else
+            this.paper.ShowFinalScore(saneString, score);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -99,7 +109,7 @@ public class ScoreHandler : MonoBehaviour
         if (!sceneVolume.sharedProfile.TryGet(out vignette)) throw new System.NullReferenceException(nameof(vignette));
         vignette.color.SetValue(new ColorParameter(Color.black));
         targetColor = goodColor;
-        fadeOut.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
