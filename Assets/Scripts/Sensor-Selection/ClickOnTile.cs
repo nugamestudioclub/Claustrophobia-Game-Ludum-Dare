@@ -17,7 +17,8 @@ public class ClickOnTile : MonoBehaviour
     private GameObject grid;
     [SerializeField]
     private GameObject sensor;
-
+    private CardItem loadedCard;
+    private bool canPlace = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +28,18 @@ public class ClickOnTile : MonoBehaviour
         gridOffset = new Vector3(grid.transform.position.x-1, 0, grid.transform.position.z + 1f);
     }
 
+    public void SetCard(CardItem card)
+    {
+        loadedCard = card;
+        canPlace = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (GameStateMachine.Instance.CurrentState == GameState.Placement)
         {
-            if (Input.GetMouseButtonDown(0)&&!sensor.GetComponent<SensorComponent>().triggered)
+            if (Input.GetMouseButtonDown(0)&&!sensor.GetComponent<SensorComponent>().triggered&&canPlace)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
@@ -44,7 +51,11 @@ public class ClickOnTile : MonoBehaviour
                     Vector3 rounded = Vector3Int.RoundToInt(hitPoint);
                     rounded *= gridIncrement;
                     rounded += gridOffset;
-                    Instantiate(objectPrefab, new Vector3(rounded.x, 1.002f, rounded.z), Quaternion.identity);
+                    GameObject obj = Instantiate(objectPrefab, new Vector3(rounded.x, 1.002f, rounded.z), Quaternion.identity);
+                    obj.GetComponent<SpawnableObjectComponent>().LoadDiagram(loadedCard.Diagram,loadedCard);
+                    canPlace = false;
+                    
+                    GameStateMachine.Instance.Next();
                 }
             }
             else

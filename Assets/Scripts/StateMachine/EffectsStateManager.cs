@@ -4,10 +4,38 @@ using UnityEngine;
 
 public class EffectsStateManager : IStateManager
 {
+    private List<SpawnableObjectComponent> reportedItems = new List<SpawnableObjectComponent>();
+
+    public static EffectsStateManager Instance;
+
+    [SerializeField]
+    private ScoreHandler score;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    public void Report(SpawnableObjectComponent item)
+    {
+        this.reportedItems.Add(item);
+        
+    }
+
+    public void Show()
+    {
+        score.CalculateNewScore(reportedItems);
+    }
+    public void Hide()
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.stateMachine.RegisterEnterStateEvent(GameStateManagement.GameState.Effect,Show);
+        this.stateMachine.RegisterExitStateEvent(GameStateManagement.GameState.Effect, Hide);
     }
 
     // Update is called once per frame

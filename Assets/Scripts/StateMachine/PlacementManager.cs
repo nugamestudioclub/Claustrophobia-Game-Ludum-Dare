@@ -7,6 +7,10 @@ public class PlacementManager : IStateManager
 {
     [SerializeField]
     public Card cardui;
+    [SerializeField]
+    private SensorComponent sensor;
+    [SerializeField]
+    private ClickOnTile clicker;
     private int selectedCard = -1;
 
     public void Show()
@@ -15,13 +19,16 @@ public class PlacementManager : IStateManager
         selectedCard = cardui.ShownStatus.IndexOf(true);
         
         CardRenderer card = cardui.GetCard(selectedCard);
-        print("selected:" + card.CardInfo.Title);
+        
+        sensor.LoadCard(card.CardInfo);
+        clicker.SetCard(card.CardInfo);
        
     }
     public void Hide()
     {
         selectedCard = cardui.ShownStatus.IndexOf(true);
-        //cardui.HideCard(selectedCard);
+        cardui.HideCard(selectedCard);
+        sensor.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update
