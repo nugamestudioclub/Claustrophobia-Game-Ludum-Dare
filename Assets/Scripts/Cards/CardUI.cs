@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
+    [SerializeField]
     private Canvas canvas;
 
     [SerializeField]
@@ -28,7 +29,7 @@ public class Card : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GameObject.FindObjectOfType<Canvas>();
+        
         
 
     }

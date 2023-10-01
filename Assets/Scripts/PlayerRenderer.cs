@@ -1,29 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
-public class BarControl : MonoBehaviour
+public class PlayerRenderer : MonoBehaviour
 {
     [SerializeField]
-    private float points;
-    
-
-    public void SetPoints(float percentage)
-    {
-        this.points = percentage;
-    }
-
+    private TMP_Text dialogText;
+    [SerializeField]
+    private GameObject dialogBox;
+    [SerializeField]
+    private CharacterInfo selected;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Scrollbar>().size = points;
+        
     }
-
 }
+

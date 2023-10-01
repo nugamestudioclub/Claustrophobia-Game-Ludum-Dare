@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class ScoreHandler : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class ScoreHandler : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private BarControl scoreBar;
+    [SerializeField]
+    private Volume sceneVolume;
 
     float distWeight(float dist)
     {
@@ -53,19 +57,33 @@ public class ScoreHandler : MonoBehaviour
         float maxScore = 10;
         float percentileScore = this.score / maxScore;
         scoreBar.SetPoints(percentileScore);
+        if (score >= maxScore)
+        {
 
+        }
 
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        UnityEngine.Rendering.Universal.Vignette vignette;
+
+        if (!sceneVolume.sharedProfile.TryGet(out vignette)) throw new System.NullReferenceException(nameof(vignette));
+        vignette.color.SetValue(new ColorParameter(Color.black));
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        if (score > 6)
+        {
+            UnityEngine.Rendering.Universal.Vignette vignette;
+
+            if (!sceneVolume.sharedProfile.TryGet(out vignette)) throw new System.NullReferenceException(nameof(vignette));
+            vignette.color.SetValue(new ColorParameter(Color.red));
+        }
+
     }
 
     

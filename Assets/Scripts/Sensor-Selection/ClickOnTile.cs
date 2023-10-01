@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameStateManagement;
+using UnityEngine.Events;
 
 public class ClickOnTile : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class ClickOnTile : MonoBehaviour
     private GameObject sensor;
     private CardItem loadedCard;
     private bool canPlace = false;
+
+    [SerializeField]
+    private UnityEvent onMoveCursor;
+    private Vector3 pRoundedPos;
 
     // Start is called before the first frame update
     void Start()
@@ -49,8 +54,6 @@ public class ClickOnTile : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, 100) && (hit.collider.gameObject.tag == "TileMap"))
                 {
                     
-
-
                     Vector3 hitPoint = hit.point;
                     hitPoint /= gridIncrement;
                     Vector3 rounded = Vector3Int.RoundToInt(hitPoint);
@@ -79,6 +82,12 @@ public class ClickOnTile : MonoBehaviour
                     rounded *= gridIncrement;
                     rounded += gridOffset;
                     sensor.transform.position = new Vector3(rounded.x, 1.002f, rounded.z);
+                    if (pRoundedPos != null && pRoundedPos != rounded)
+                    {
+                        onMoveCursor.Invoke();
+                        
+                    }
+                    pRoundedPos = rounded;
                 }
             }
         }

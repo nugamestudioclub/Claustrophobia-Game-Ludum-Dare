@@ -21,7 +21,7 @@ public class CardItem : ScriptableObject
 
     [SerializeField]
     private GameObject prefab;
-    [SerializeField]
+    
     public DiagramType Diagram;
 
     public Sprite Sprite { get { return sprite; }  }

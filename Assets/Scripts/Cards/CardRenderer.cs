@@ -36,12 +36,10 @@ public class CardRenderer : MonoBehaviour
 
     public void Hide()
     {
-        print("hiding...");
         currentPosition = lowPosition;
     }
     public void Show()
     {
-        print("Showing...");
         currentPosition = initPosition;
     }
     public void LoadCard(CardItem card)

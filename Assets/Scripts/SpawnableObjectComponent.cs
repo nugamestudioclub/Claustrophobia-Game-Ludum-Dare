@@ -13,6 +13,10 @@ public class SpawnableObjectComponent : MonoBehaviour
     private CardItem loadedItem;
     public CardItem correspondingCard { get { return loadedItem; } }
 
+    private Vector3 startPos;
+    [SerializeField]
+    private float yIntroHeight = 50f;
+
     public void LoadDiagram(DiagramType diagram, CardItem item)
     {
         ne.gameObject.SetActive(diagram.NorthEast);
@@ -37,12 +41,13 @@ public class SpawnableObjectComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        startPos = transform.position;
+        transform.position = new Vector3(transform.position.x,startPos.y+yIntroHeight,transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = Vector3.Lerp(transform.position, startPos, Time.deltaTime*5f);
     }
 }
