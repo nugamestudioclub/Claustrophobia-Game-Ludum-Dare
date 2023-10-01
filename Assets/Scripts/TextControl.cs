@@ -32,7 +32,8 @@ public class TextControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        
+        if (Input.GetKeyDown(KeyCode.Return)&& gameState.CurrentState==GameState.Intro)
         {
             if (currentText.text.Equals(fullText))
             {

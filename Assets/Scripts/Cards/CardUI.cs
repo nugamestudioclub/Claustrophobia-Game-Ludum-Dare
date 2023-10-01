@@ -78,7 +78,6 @@ public class Card : MonoBehaviour
         foreach(Button b in cards)
         {
             DiagramType type = diagrams[Random.Range(0, diagrams.Count)];
-            print(type);
             b.GetComponent<CardRenderer>().diagramType= type;
             b.GetComponent<CardRenderer>().CardInfo.Diagram = type;
         }

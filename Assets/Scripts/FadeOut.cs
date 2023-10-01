@@ -31,6 +31,7 @@ public class FadeOut : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
+        this.transform.SetAsLastSibling();
     }
 
     public void ChangeFade()

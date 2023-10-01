@@ -469,6 +469,7 @@ MonoBehaviour:
   nw: {fileID: 2645734320174339063}
   se: {fileID: 2769172297116161498}
   sw: {fileID: 3527794948218731337}
+  spriteRender: {fileID: 7143399227259562110}
 --- !u!1 &7018184456085462198
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +578,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: e7c93e16c920cf14e83781827fb6f563, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -15,7 +15,8 @@ public class PlacementManager : IStateManager
 
     public void Show()
     {
-        //print(cardui.ShownStatus);
+        
+        
         selectedCard = cardui.ShownStatus.IndexOf(true);
         
         CardRenderer card = cardui.GetCard(selectedCard);

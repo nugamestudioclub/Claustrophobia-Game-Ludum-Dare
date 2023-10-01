@@ -36,10 +36,12 @@ public class CardRenderer : MonoBehaviour
 
     public void Hide()
     {
+        print("hiding...");
         currentPosition = lowPosition;
     }
     public void Show()
     {
+        print("Showing...");
         currentPosition = initPosition;
     }
     public void LoadCard(CardItem card)
@@ -47,17 +49,14 @@ public class CardRenderer : MonoBehaviour
         this.cardImage.sprite = card.Sprite;
         this.title.text = cardInfo.Title;
         this.cardInfo = card;
-
     }
     public void SetSelected()
     {
         this.isSelected = true;
-        print("Selected");
     }
     public void SetUnselected()
     {
         this.isSelected = false;
-        print("Unselected");
     }
 
     public void PlayFadeAnimation()

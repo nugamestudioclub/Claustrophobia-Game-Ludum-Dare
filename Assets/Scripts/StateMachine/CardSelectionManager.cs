@@ -40,6 +40,7 @@ public class CardSelectionManager : IStateManager
     }
     void Show()
     {
+        print("showing!");
         this.cardManager.RandomizeDiagrams(diagramTypes);
         this.cardManager.ShowCards();
     }

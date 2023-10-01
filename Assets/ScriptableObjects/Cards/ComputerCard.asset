@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f418df4dca22d224d95e02d30f07a956, type: 3}
   m_Name: ComputerCard
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 8fbcc6c440233a043b854b8299fc4332, type: 3}
+  sprite: {fileID: 21300000, guid: beaba30523fa67c4eae58c7e4e2f6411, type: 3}
   title: First Computer
   description: 
   effect: 1
   defaultMagnitude: 1
   prefab: {fileID: 6154323354594961623, guid: fe33cf27e4087d5469e7f59435e72332, type: 3}
-  Diagram: {fileID: 11400000, guid: 252862dd906b2884285d2938f3004b69, type: 2}
+  Diagram: {fileID: 11400000, guid: a9417d75bf50bc0478816225ea84b99c, type: 2}
