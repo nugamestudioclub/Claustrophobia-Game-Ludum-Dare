@@ -44,8 +44,13 @@ public class ClickOnTile : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
+                
+
                 if (Physics.Raycast(ray, out hit, 100) && (hit.collider.gameObject.tag == "TileMap"))
                 {
+                    
+
+
                     Vector3 hitPoint = hit.point;
                     hitPoint /= gridIncrement;
                     Vector3 rounded = Vector3Int.RoundToInt(hitPoint);
@@ -66,6 +71,8 @@ public class ClickOnTile : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit, 100) && (hit.collider.gameObject.tag == "TileMap"))
                 {
+                    gameObject.GetComponent<ObjectPlacingSounds>().ObjectMove();
+
                     Vector3 hitPoint = hit.point;
                     hitPoint /= gridIncrement;
                     Vector3 rounded = Vector3Int.RoundToInt(hitPoint);

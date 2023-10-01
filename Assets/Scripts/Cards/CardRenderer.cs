@@ -52,6 +52,7 @@ public class CardRenderer : MonoBehaviour
     }
     public void SetSelected()
     {
+        
         this.isSelected = true;
     }
     public void SetUnselected()
@@ -61,6 +62,7 @@ public class CardRenderer : MonoBehaviour
 
     public void PlayFadeAnimation()
     {
+        
         cardAnim.Play("Hide");
     }
    

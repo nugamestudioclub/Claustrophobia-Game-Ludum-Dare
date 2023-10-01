@@ -85,6 +85,7 @@ public class Card : MonoBehaviour
 
     public void ShowCards()
     {
+        gameObject.GetComponent<CardSound>().CardsOpen();
         int counter = 0;
         foreach(Button b in cards)
         {
@@ -116,7 +117,8 @@ public class Card : MonoBehaviour
     }
     public void HideAllButOneCard(int exception)
     {
-        for(int i = 0; i < cards.Count; i++)
+        gameObject.GetComponent<CardSound>().CardPick();
+        for (int i = 0; i < cards.Count; i++)
         {
             if (i != exception)
             {
