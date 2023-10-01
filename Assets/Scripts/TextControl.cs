@@ -7,8 +7,6 @@ using GameStateManagement;
 
 public class TextControl : MonoBehaviour
 {
-    [SerializeField]
-    private string fullText;
 
     [SerializeField]
     private TextMeshProUGUI currentText;
@@ -16,9 +14,14 @@ public class TextControl : MonoBehaviour
     [SerializeField]
     private GameStateMachine gameState;
 
+    [SerializeField]
+    private int order;
+
     private Color i;
     private float targetAlpha = 0f;
     private bool fade;
+
+    private List<string> fullText = new List<string> { "You are an evil psychiatrist. Your 'patients' have been", "institutionalized for extreme claustrophobia.", "Make them feel small." };
 
     // Start is called before the first frame update
     void Start()
@@ -26,19 +29,29 @@ public class TextControl : MonoBehaviour
         currentText.text = "";
         i = this.gameObject.GetComponent<TextMeshProUGUI>().color;
         fade = false;
-        StartCoroutine(WriteText());
+        if (order == 0)
+        {
+            StartCoroutine(WriteText());
+        }
+        else 
+        {
+            StartCoroutine(Wait());
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Return)&& gameState.CurrentState==GameState.Intro)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (currentText.text.Equals(fullText))
+            if (currentText.text.Equals(fullText[order]))
             {
                 fade = true;
-                gameState.Next();
+                if (order == 2)
+                {
+                    gameState.Next();
+                }
             }
         }
         if (fade)
@@ -54,12 +67,30 @@ public class TextControl : MonoBehaviour
         }
     }
 
+    IEnumerator Wait()
+    {
+        float value = 0f;
+        for (int i = 0; i < fullText.Count; i++)
+        {
+            if (order == i)
+            {
+                StartCoroutine(WriteText());
+            }
+            else
+            {
+                value = fullText[i].Length * 0.05f;
+            }
+            yield return new WaitForSeconds(value);
+        }
+        yield return null;
+    }
+
     IEnumerator WriteText()
     {
-        for (int i = 0; i < fullText.Length; i++)
+        for (int i = 0; i < fullText[order].Length; i++)
         {
-            currentText.text += fullText[i];
-            yield return new WaitForSeconds(0.05f);
+            currentText.text += fullText[order][i];
+            yield return new WaitForSeconds(0.05f * Time.deltaTime);
         }
         yield return null;
     }

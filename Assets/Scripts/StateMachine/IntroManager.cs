@@ -8,6 +8,9 @@ public class IntroManager : IStateManager
     [SerializeField]
     private GameObject fade;
 
+    [SerializeField]
+    private GameObject fade2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class IntroManager : IStateManager
     public void Hide()
     {
         fade.GetComponent<FadeOut>().ChangeFade();
+        fade2.GetComponent<FadeOut>().ChangeFade();
         
     }
 

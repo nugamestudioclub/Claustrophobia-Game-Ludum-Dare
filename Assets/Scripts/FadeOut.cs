@@ -23,7 +23,7 @@ public class FadeOut : MonoBehaviour
         if (fade)
         {
             float alpha = Mathf.Lerp(i.a, targetAlpha, 0.9f * Time.deltaTime);
-            i = new Color(0f, 0f, 0f, alpha);
+            i = new Color(i.r, i.g, i.b, alpha);
             this.gameObject.GetComponent<Image>().color = i;
 
             if (i.a < 0.01f)
