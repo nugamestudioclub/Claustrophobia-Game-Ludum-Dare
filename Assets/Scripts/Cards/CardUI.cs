@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +29,7 @@ public class Card : MonoBehaviour
     void Start()
     {
         canvas = GameObject.FindObjectOfType<Canvas>();
-        CardRenderer();
+        
 
     }
     
@@ -43,8 +44,12 @@ public class Card : MonoBehaviour
     }
 
     // Renders the card in the UI
-    void CardRenderer()
+    public void CardRenderer(List<CardItem> chosenCards)
     {
+        if (canvas == null)
+        {
+            canvas = GameObject.FindObjectOfType<Canvas>();
+        }
         for (var i = 0; i < 5; i++)
         {
             GameObject card = Instantiate(cardPrefab, canvas.transform);
@@ -54,6 +59,7 @@ public class Card : MonoBehaviour
             cards.Add(card.GetComponent<Button>());
             card.GetComponent<Button>().onClick.AddListener(Clicked);
             shownStatus.Add(false);
+            card.GetComponent<CardRenderer>().LoadCard(chosenCards[i]);
         }
 
     }
@@ -77,6 +83,7 @@ public class Card : MonoBehaviour
             DiagramType type = diagrams[Random.Range(0, diagrams.Count)];
             print(type);
             b.GetComponent<CardRenderer>().diagramType= type;
+            b.GetComponent<CardRenderer>().CardInfo.Diagram = type;
         }
     }
 
@@ -108,6 +115,8 @@ public class Card : MonoBehaviour
         }
         shownStatus[i] = false;
         this.cards[i].GetComponent<CardRenderer>().Hide();
+        this.cards[i].GetComponent<CardRenderer>().PlayFadeAnimation();
+        
     }
     public void HideAllButOneCard(int exception)
     {

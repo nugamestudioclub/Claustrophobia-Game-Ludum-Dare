@@ -27,6 +27,7 @@ public class CardItem : ScriptableObject
     public Sprite Sprite { get { return sprite; }  }
     public string Title { get { return title; } }
     public string Description { get { return description; } }
+    public float DefaultMagnitude { get { return this.defaultMagnitude; } }
     public GameObject Prefab { get { return prefab; } }
     public MentalEffect EffectType { get { return effect; } }
     

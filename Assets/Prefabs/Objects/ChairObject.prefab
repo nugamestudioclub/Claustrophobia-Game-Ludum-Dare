@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3594959289704546273}
   - component: {fileID: 337812509296090206}
   m_Layer: 0
-  m_Name: FillSpace4
+  m_Name: NW
   m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 4694209215578085914}
   - component: {fileID: 3624183358712188072}
   m_Layer: 0
-  m_Name: FillSpace2
+  m_Name: SE
   m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 3068563487481589744}
   - component: {fileID: 7375014376038543860}
   m_Layer: 0
-  m_Name: FillSpace1
+  m_Name: SW
   m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 2756952132269473869}
   - component: {fileID: 868177928131252374}
   m_Layer: 0
-  m_Name: FillSpace3
+  m_Name: NE
   m_TagString: Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,9 +465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95a3f3ee7482244b999659c02dc7b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ne: {fileID: 2645734320174339063}
-  nw: {fileID: 2769172297116161498}
-  se: {fileID: 5211290094619614944}
+  ne: {fileID: 5211290094619614944}
+  nw: {fileID: 2645734320174339063}
+  se: {fileID: 2769172297116161498}
   sw: {fileID: 3527794948218731337}
 --- !u!1 &7018184456085462198
 GameObject:

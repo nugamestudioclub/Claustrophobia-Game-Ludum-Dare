@@ -48,7 +48,7 @@ public class ScoreHandler : MonoBehaviour
             //Take in distance from player
             float dist = Vector3.Distance(item.transform.position, player.transform.position);
             dist = distWeight(dist);
-            this.score += dist * typeCount[item.correspondingCard.EffectType];
+            this.score += dist * typeCount[item.correspondingCard.EffectType]*item.correspondingCard.DefaultMagnitude;
         }
         float maxScore = 10;
         float percentileScore = this.score / maxScore;

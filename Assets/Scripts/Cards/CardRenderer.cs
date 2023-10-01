@@ -27,6 +27,8 @@ public class CardRenderer : MonoBehaviour
     public bool IsSelected { get { return isSelected; } }
 
     public DiagramType diagramType;
+    [SerializeField]
+    private Animator cardAnim;
     public void SetPrimary()
     {
         this.transform.SetAsLastSibling();
@@ -40,7 +42,13 @@ public class CardRenderer : MonoBehaviour
     {
         currentPosition = initPosition;
     }
+    public void LoadCard(CardItem card)
+    {
+        this.cardImage.sprite = card.Sprite;
+        this.title.text = cardInfo.Title;
+        this.cardInfo = card;
 
+    }
     public void SetSelected()
     {
         this.isSelected = true;
@@ -50,6 +58,11 @@ public class CardRenderer : MonoBehaviour
     {
         this.isSelected = false;
         print("Unselected");
+    }
+
+    public void PlayFadeAnimation()
+    {
+        cardAnim.Play("Hide");
     }
    
     // Start is called before the first frame update

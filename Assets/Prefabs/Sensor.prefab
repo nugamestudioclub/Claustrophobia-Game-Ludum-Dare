@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7741757350260990358}
   - component: {fileID: 5923814281399046037}
   - component: {fileID: 2590568615497622115}
-  m_Layer: 0
-  m_Name: Cube (1)
+  - component: {fileID: 2846644135480634184}
+  m_Layer: 2
+  m_Name: NW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 2470910852547441268}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.03, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.6758022, z: 2}
+  m_LocalPosition: {x: -2.03, y: -0.62, z: 0}
+  m_LocalScale: {x: 1.7, y: 0.6758022, z: 1.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8774515071461164101}
@@ -118,6 +119,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6360cd94cd3cfe44a6caee5105ed7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goodColor: {r: 0, g: 0, b: 0, a: 0}
+  badColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!54 &2846644135480634184
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2470910852547441268}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 118
+  m_CollisionDetection: 0
 --- !u!1 &2801789406926496704
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,8 +161,9 @@ GameObject:
   - component: {fileID: 6308023069289062799}
   - component: {fileID: 2019937198385507485}
   - component: {fileID: 81285400983446297}
-  m_Layer: 0
-  m_Name: Cube (3)
+  - component: {fileID: 5788408933302886888}
+  m_Layer: 2
+  m_Name: SW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,8 +178,8 @@ Transform:
   m_GameObject: {fileID: 2801789406926496704}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.059999943, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.6758022, z: 2}
+  m_LocalPosition: {x: -0.059999943, y: -0.62, z: 0}
+  m_LocalScale: {x: 1.7, y: 0.6758022, z: 1.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8774515071461164101}
@@ -236,6 +267,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6360cd94cd3cfe44a6caee5105ed7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goodColor: {r: 0, g: 0, b: 0, a: 0}
+  badColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!54 &5788408933302886888
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801789406926496704}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4688185883769669195
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8774515071461164101}
   - component: {fileID: 4457508845322444350}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,10 +326,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7344021677729572634}
   - {fileID: 2517227214210507814}
-  - {fileID: 6246573085899601348}
+  - {fileID: 7344021677729572634}
   - {fileID: 7352034727039281432}
+  - {fileID: 6246573085899601348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4457508845322444350
@@ -284,6 +344,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bac8b4629625ab4f9836d179219103a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggered: 0
+  goodColor: {r: 0.48490566, g: 0.48490566, b: 1, a: 1}
+  badColor: {r: 1, g: 0.5226415, b: 0.5226415, a: 1}
+  loadedCard: {fileID: 0}
 --- !u!1 &7615684473002835470
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,8 +361,9 @@ GameObject:
   - component: {fileID: 1143989950522498077}
   - component: {fileID: 1616834999800137548}
   - component: {fileID: 4789696613681290446}
-  m_Layer: 0
-  m_Name: Cube
+  - component: {fileID: 353564401886132386}
+  m_Layer: 2
+  m_Name: NE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,8 +378,8 @@ Transform:
   m_GameObject: {fileID: 7615684473002835470}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.03, y: 0, z: 1.9000001}
-  m_LocalScale: {x: 2, y: 0.6758022, z: 2}
+  m_LocalPosition: {x: -2.03, y: -0.62, z: 1.9000001}
+  m_LocalScale: {x: 1.7, y: 0.6758022, z: 1.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8774515071461164101}
@@ -402,6 +467,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6360cd94cd3cfe44a6caee5105ed7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goodColor: {r: 0, g: 0, b: 0, a: 0}
+  badColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!54 &353564401886132386
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7615684473002835470}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 118
+  m_CollisionDetection: 0
 --- !u!1 &7840180315226548651
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,8 +509,9 @@ GameObject:
   - component: {fileID: 8284766691127057767}
   - component: {fileID: 2256514556582562347}
   - component: {fileID: 3181267096626508791}
-  m_Layer: 0
-  m_Name: Cube (2)
+  - component: {fileID: 1517196404840603772}
+  m_Layer: 2
+  m_Name: SE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,8 +526,8 @@ Transform:
   m_GameObject: {fileID: 7840180315226548651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0, z: 1.9000001}
-  m_LocalScale: {x: 2, y: 0.6758022, z: 2}
+  m_LocalPosition: {x: -0.06, y: -0.62, z: 1.9000001}
+  m_LocalScale: {x: 1.7, y: 0.6758022, z: 1.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8774515071461164101}
@@ -520,3 +615,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6360cd94cd3cfe44a6caee5105ed7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goodColor: {r: 0, g: 0, b: 0, a: 0}
+  badColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!54 &1517196404840603772
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7840180315226548651}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 118
+  m_CollisionDetection: 0

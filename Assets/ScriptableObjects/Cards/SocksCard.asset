@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f418df4dca22d224d95e02d30f07a956, type: 3}
+  m_Name: SocksCard
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 543c50496c6132d4995a4229915bd6da, type: 3}
+  title: Stinky Socks
+  description: 
+  effect: 2
+  defaultMagnitude: 2
+  prefab: {fileID: 6154323354594961623, guid: fe33cf27e4087d5469e7f59435e72332, type: 3}
+  Diagram: {fileID: 11400000, guid: 252862dd906b2884285d2938f3004b69, type: 2}

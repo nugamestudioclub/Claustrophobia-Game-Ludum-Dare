@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9097532305376941631}
   - component: {fileID: 628027712478310105}
   - component: {fileID: 605095916745658966}
+  - component: {fileID: 8557141315897105653}
   m_Layer: 5
   m_Name: CardPrefab
   m_TagString: Untagged
@@ -143,6 +144,8 @@ MonoBehaviour:
   title: {fileID: 1131195956030396650}
   cardImage: {fileID: 2008647265507868819}
   layoutImage: {fileID: 3372076492764975013}
+  diagramType: {fileID: 0}
+  cardAnim: {fileID: 8557141315897105653}
 --- !u!114 &605095916745658966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +203,27 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!95 &8557141315897105653
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220701037176361309}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea201110151f94a498a7b63114be83ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5162004380815216265
 GameObject:
   m_ObjectHideFlags: 0
