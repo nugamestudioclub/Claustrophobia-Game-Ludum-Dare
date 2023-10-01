@@ -23,7 +23,7 @@ public class IntroManager : IStateManager
     public void Hide()
     {
         fade.GetComponent<FadeOut>().ChangeFade();
-        this.stateMachine.Next();
+        
     }
 
 

@@ -37,10 +37,7 @@ public class Card : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            ShowCards();
-        }
+        
     }
 
     // Renders the card in the UI

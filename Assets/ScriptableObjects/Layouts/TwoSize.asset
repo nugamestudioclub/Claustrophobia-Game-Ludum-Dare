@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d132bb22c3e1e724fa253d87fadbb952, type: 3}
   m_Name: TwoSize
   m_EditorClassIdentifier: 
-  northWest: 1
-  northEast: 1
-  southWest: 0
-  southEast: 0
+  northWest: 0
+  northEast: 0
+  southWest: 1
+  southEast: 1
   image: {fileID: 21300000, guid: e6463e5351e7d894f90d4594285a167f, type: 3}
