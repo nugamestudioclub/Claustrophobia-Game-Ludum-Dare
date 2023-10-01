@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class ScoreHandler : MonoBehaviour
 {
     private float score;
+    private float pScore;
     public int Score { get { return Mathf.RoundToInt(score); } }
     [SerializeField]
-    private GameObject player;
+    private PlayerRenderer player;
     [SerializeField]
     private BarControl scoreBar;
     [SerializeField]
     private Volume sceneVolume;
+    [SerializeField]
+    private Animator fadeOut;
+
+    private Color currentColor;
+    private Color targetColor;
+    private Color goodColor = Color.black;
+    private Color badColor = Color.red;
 
     float distWeight(float dist)
     {
@@ -54,14 +63,33 @@ public class ScoreHandler : MonoBehaviour
             dist = distWeight(dist);
             this.score += dist * typeCount[item.correspondingCard.EffectType]*item.correspondingCard.DefaultMagnitude;
         }
-        float maxScore = 10;
+        float maxScore = 6;
         float percentileScore = this.score / maxScore;
         scoreBar.SetPoints(percentileScore);
         if (score >= maxScore)
         {
-
+            fadeOut.gameObject.SetActive(true);
+            print("YOU LOSE!");
         }
+        if (score >= 4)
+        {
+            this.player.ChooseRandomCrazy();
+        }
+        else
+        {
+            float diff = this.score - pScore;
+            if (diff > 0)
+            {
+                this.player.ChooseRandomBad();
+            }
+            else
+            {
+                this.player.ChooseRandomGood();
+            }
+        }
+       
 
+        pScore = score;
     }
     // Start is called before the first frame update
     void Start()
@@ -70,18 +98,35 @@ public class ScoreHandler : MonoBehaviour
 
         if (!sceneVolume.sharedProfile.TryGet(out vignette)) throw new System.NullReferenceException(nameof(vignette));
         vignette.color.SetValue(new ColorParameter(Color.black));
+        targetColor = goodColor;
+        fadeOut.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (score > 6)
+        if (score > 4)
         {
             UnityEngine.Rendering.Universal.Vignette vignette;
 
             if (!sceneVolume.sharedProfile.TryGet(out vignette)) throw new System.NullReferenceException(nameof(vignette));
-            vignette.color.SetValue(new ColorParameter(Color.red));
+            vignette.color.SetValue(new ColorParameter(currentColor));
+            currentColor = Color.Lerp(currentColor, targetColor,Time.deltaTime*10f);
+            if (currentColor == goodColor)
+            {
+                targetColor = badColor;
+            }else if(currentColor == badColor)
+            {
+                targetColor = goodColor;
+            }
+        }
+        else
+        {
+            UnityEngine.Rendering.Universal.Vignette vignette;
+
+            if (!sceneVolume.sharedProfile.TryGet(out vignette)) throw new System.NullReferenceException(nameof(vignette));
+            vignette.color.SetValue(new ColorParameter(goodColor));
         }
 
     }
