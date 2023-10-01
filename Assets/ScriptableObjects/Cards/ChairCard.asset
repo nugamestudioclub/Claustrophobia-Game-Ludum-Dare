@@ -16,6 +16,6 @@ MonoBehaviour:
   title: Wife's Chair
   description: 
   effect: 0
-  defaultMagnitude: 1
+  defaultMagnitude: 3
   prefab: {fileID: 6154323354594961623, guid: fe33cf27e4087d5469e7f59435e72332, type: 3}
-  Diagram: {fileID: 11400000, guid: 252862dd906b2884285d2938f3004b69, type: 2}
+  Diagram: {fileID: 11400000, guid: 384dc911f68a38b40ab251c3b065cd63, type: 2}

@@ -847,6 +847,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0361195034a96ed4d92a2620eb9a85d9, type: 2}
   - {fileID: 11400000, guid: f9574ef9730d73a489849f0295467714, type: 2}
   - {fileID: 11400000, guid: ee23732128f69fb4abd12c41f805c8fd, type: 2}
+  - {fileID: 11400000, guid: ef4304009e6b8ea4dafba56b447d16b4, type: 2}
+  - {fileID: 11400000, guid: dfdd5a4967124774a88059d80ce00369, type: 2}
+  - {fileID: 11400000, guid: 222a7ea2e0919364ab6cf7bd0a7cd7bf, type: 2}
+  - {fileID: 11400000, guid: feda42f244a47294d936af69a1616df0, type: 2}
+  - {fileID: 11400000, guid: 932db215d651a104d962fc2200d9c4fb, type: 2}
+  - {fileID: 11400000, guid: d53966c1f888ad946b46bead812c7ce6, type: 2}
 --- !u!114 &582313630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2018,7 +2024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5344767840817634424, guid: 814fd145f20de404eb8b706466e160be, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7041784433651965111, guid: 814fd145f20de404eb8b706466e160be, type: 3}
       propertyPath: m_AnchorMax.x

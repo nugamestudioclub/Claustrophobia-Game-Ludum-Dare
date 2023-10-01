@@ -146,7 +146,7 @@ MonoBehaviour:
   title: {fileID: 1131195956030396650}
   cardImage: {fileID: 2008647265507868819}
   layoutImage: {fileID: 3372076492764975013}
-  diagramType: {fileID: 0}
+  diagramType: {fileID: 11400000, guid: 32e688c95e3bbb6428d70ef5c601fa19, type: 2}
   cardAnim: {fileID: 8557141315897105653}
 --- !u!114 &605095916745658966
 MonoBehaviour:

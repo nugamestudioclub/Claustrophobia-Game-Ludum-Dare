@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df3e346b1bd4f6418ddec8ee9f3c3eb, type: 3}
   m_Name: PatientTest
   m_EditorClassIdentifier: 
-  patientName: Jordan Brown
-  patientDescription: 'Born: 1902.'
+  patientName: Patient Zero
+  patientDescription: 'Born: 1902. Patient keeps talking about his home. Keeps talking
+    about rearranging furniture and keeping the pests away.'
   patientSane: {fileID: 21300000, guid: 378f552a5f5791846bdd3238ee565a1e, type: 3}
   patientSemiSane: {fileID: 21300000, guid: 270b7cbad628fb845b1fde9c8cb6207d, type: 3}
   patientInsane: {fileID: 21300000, guid: 2d59542e0bfaa684da4e2fe09032b5b6, type: 3}
@@ -21,11 +22,14 @@ MonoBehaviour:
   - Reminds me of home...
   - That's more comfortable...
   - I like that...
+  - Good...
   badDialogs:
   - Urgh I don't like that...
   - Please no...
   - Urgh...
+  - Gross..
   crazyDialogs:
   - '!@#@#...'
   - '@$#@#...'
   - P L E A S E  S T O P
+  - The end is never the end...
