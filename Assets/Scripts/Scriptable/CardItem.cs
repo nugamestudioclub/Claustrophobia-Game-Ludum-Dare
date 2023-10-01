@@ -22,14 +22,14 @@ public class CardItem : ScriptableObject
     [SerializeField]
     private GameObject prefab;
     [SerializeField]
-    private DiagramType diagram;
+    public DiagramType Diagram;
 
     public Sprite Sprite { get { return sprite; }  }
     public string Title { get { return title; } }
     public string Description { get { return description; } }
     public GameObject Prefab { get { return prefab; } }
     public MentalEffect EffectType { get { return effect; } }
-    public DiagramType Diagram { get { return diagram; } }
+    
 }
 public enum MentalEffect {Personal, Historical, Confusing };
 

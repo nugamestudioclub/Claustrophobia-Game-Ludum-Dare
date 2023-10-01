@@ -18,4 +18,4 @@ MonoBehaviour:
   effect: 0
   defaultMagnitude: 1
   prefab: {fileID: 6154323354594961623, guid: fe33cf27e4087d5469e7f59435e72332, type: 3}
-  diagram: {fileID: 11400000, guid: a9417d75bf50bc0478816225ea84b99c, type: 2}
+  Diagram: {fileID: 11400000, guid: a9417d75bf50bc0478816225ea84b99c, type: 2}

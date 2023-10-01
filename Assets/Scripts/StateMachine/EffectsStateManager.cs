@@ -25,6 +25,13 @@ public class EffectsStateManager : IStateManager
     public void Show()
     {
         score.CalculateNewScore(reportedItems);
+        StartCoroutine(WaitForEffect());
+    }
+    private IEnumerator WaitForEffect()
+    {
+
+        yield return new WaitForSeconds(10);
+        this.stateMachine.Next();
     }
     public void Hide()
     {

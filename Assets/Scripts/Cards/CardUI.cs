@@ -69,6 +69,17 @@ public class Card : MonoBehaviour
         }
         HideAllButOneCard(sel);
     }
+    public void RandomizeDiagrams(List<DiagramType> diagrams)
+    {
+        
+        foreach(Button b in cards)
+        {
+            DiagramType type = diagrams[Random.Range(0, diagrams.Count)];
+            print(type);
+            b.GetComponent<CardRenderer>().diagramType= type;
+        }
+    }
+
     public void ShowCards()
     {
         int counter = 0;

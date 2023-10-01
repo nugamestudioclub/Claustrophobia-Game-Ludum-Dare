@@ -1417,6 +1417,11 @@ MonoBehaviour:
   stateMachine: {fileID: 611112733}
   cardManager: {fileID: 1857955329}
   placement: {fileID: 611112737}
+  diagramTypes:
+  - {fileID: 11400000, guid: 384dc911f68a38b40ab251c3b065cd63, type: 2}
+  - {fileID: 11400000, guid: 252862dd906b2884285d2938f3004b69, type: 2}
+  - {fileID: 11400000, guid: a9417d75bf50bc0478816225ea84b99c, type: 2}
+  - {fileID: 11400000, guid: 32e688c95e3bbb6428d70ef5c601fa19, type: 2}
 --- !u!114 &611112737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1460,6 +1465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 475761089}
+  scoreBar: {fileID: 1637042667}
 --- !u!1 &728450911
 GameObject:
   m_ObjectHideFlags: 0

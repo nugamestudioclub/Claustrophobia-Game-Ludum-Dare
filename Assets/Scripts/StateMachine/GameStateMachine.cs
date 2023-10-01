@@ -42,7 +42,11 @@ namespace GameStateManagement
             get
             {
                 int curIndex = System.Array.IndexOf(stateOrder, currentState);
-                curIndex = Mathf.Min(curIndex + 1, stateOrder.Length-1);
+                curIndex = (curIndex + 1) % stateOrder.Length;
+                if(curIndex == 0)
+                {
+                    curIndex++;
+                }
                 return stateOrder[curIndex];
             }
         }
@@ -62,7 +66,15 @@ namespace GameStateManagement
         // Start is called before the first frame update
         void Start()
         {
-           
+            StartCoroutine(WaitTwoSecondsToStart());  
+        }
+        private IEnumerator WaitTwoSecondsToStart()
+        {
+            yield return new WaitForSeconds(2);
+            foreach(UnityAction action in this.stateEventRegister[this.currentState])
+            {
+                action.Invoke();
+            }
         }
 
         // Update is called once per frame

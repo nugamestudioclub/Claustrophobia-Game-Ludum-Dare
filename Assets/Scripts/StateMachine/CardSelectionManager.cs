@@ -10,6 +10,8 @@ public class CardSelectionManager : IStateManager
     private Card cardManager;
     [SerializeField]
     private PlacementManager placement;
+    [SerializeField]
+    private List<DiagramType> diagramTypes;
     
    
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class CardSelectionManager : IStateManager
     }
     void Show()
     {
+        this.cardManager.RandomizeDiagrams(diagramTypes);
         this.cardManager.ShowCards();
     }
     void Hide()

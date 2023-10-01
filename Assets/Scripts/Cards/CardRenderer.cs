@@ -19,10 +19,14 @@ public class CardRenderer : MonoBehaviour
     private TMP_Text title;
     [SerializeField]
     private Image cardImage;
+    [SerializeField]
+    private Image layoutImage;
     public CardItem CardInfo { get { return cardInfo; } }
 
     private bool isSelected = false;
     public bool IsSelected { get { return isSelected; } }
+
+    public DiagramType diagramType;
     public void SetPrimary()
     {
         this.transform.SetAsLastSibling();
@@ -58,6 +62,7 @@ public class CardRenderer : MonoBehaviour
         currentPosition = lowPosition;
         this.title.text = cardInfo.Title;
         this.cardImage.sprite = cardImage.sprite;
+        diagramType = this.cardInfo.Diagram;
         
     }
     public void ToggleShow()
@@ -77,6 +82,6 @@ public class CardRenderer : MonoBehaviour
     void Update()
     {
         this.transform.position = Vector3.Lerp(transform.position, currentPosition, Time.deltaTime);
-        
+        this.layoutImage.sprite = diagramType.Image;
     }
 }

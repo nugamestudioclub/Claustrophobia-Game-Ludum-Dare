@@ -8,6 +8,11 @@ public class BarControl : MonoBehaviour
     [SerializeField]
     private float points;
 
+    public void SetPoints(float percentage)
+    {
+        this.points = percentage;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
