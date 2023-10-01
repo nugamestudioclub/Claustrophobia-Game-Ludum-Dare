@@ -1448,7 +1448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -358, y: 284}
+  m_AnchoredPosition: {x: -358, y: 359}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1883457981
@@ -1480,8 +1480,10 @@ MonoBehaviour:
 
     Art:
 
-    Danru
-    Chen
+    Calvin
+    Kehan Gong
+
+    Danru Chen
 
     La Zhuo Anggilam
 
@@ -1490,10 +1492,10 @@ MonoBehaviour:
 
     Music:
 
-    Amelia (@crabgraph)
+    Amelie
+    (@crabgraph)
 
-    Raymond
-    Tsai'
+    Raymond Tsai'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54f8c894bc79dcb41a1a7f815b807f60, type: 2}
   m_sharedMaterial: {fileID: 4405996124346973575, guid: 54f8c894bc79dcb41a1a7f815b807f60, type: 2}
