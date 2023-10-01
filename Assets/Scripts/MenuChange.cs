@@ -28,7 +28,7 @@ public class MenuChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float alpha = Mathf.Lerp(i.a, targetAlpha, 0.0005f);
+        float alpha = Mathf.Lerp(i.a, targetAlpha, 0.005f * Time.deltaTime);
         i = new Color(0f, 0f, 0f, alpha);
         fadeImage.GetComponent<Image>().color = i;
         if (i.a >= 5f)
