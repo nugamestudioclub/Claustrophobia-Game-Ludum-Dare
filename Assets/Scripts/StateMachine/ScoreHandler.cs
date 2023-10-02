@@ -18,6 +18,10 @@ public class ScoreHandler : MonoBehaviour
     private Volume sceneVolume;
     [SerializeField]
     private PatientPaperRenderer paper;
+    [SerializeField]
+    AudioSource musicPlayer;
+    [SerializeField]
+    AudioSource endPlayer;
 
     private Color currentColor;
     private Color targetColor;
@@ -71,6 +75,9 @@ public class ScoreHandler : MonoBehaviour
             
             this.paper.ShowFinalScore("<color=red>Deceased</color>", score);
             print("YOU LOSE!");
+            musicPlayer.GetComponent<MusicManagerScuffed>().SetDead();
+            endPlayer.Play();
+
         }
         if (score >= 4)
         {
@@ -100,6 +107,8 @@ public class ScoreHandler : MonoBehaviour
             this.paper.ShowFinalScore(insaneString, score);
         else
             this.paper.ShowFinalScore(saneString, score);
+        musicPlayer.GetComponent<MusicManagerScuffed>().SetDead();
+        endPlayer.Play();
     }
     // Start is called before the first frame update
     void Start()
