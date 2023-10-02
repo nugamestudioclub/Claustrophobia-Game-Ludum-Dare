@@ -7,7 +7,6 @@ using GameStateManagement;
 
 public class TextControl : MonoBehaviour
 {
-
     [SerializeField]
     private TextMeshProUGUI currentText;
 
@@ -21,7 +20,7 @@ public class TextControl : MonoBehaviour
     private float targetAlpha = 0f;
     private bool fade;
 
-    private List<string> fullText = new List<string> { "You are an evil psychiatrist. Your 'patients' have been", "institutionalized for extreme claustrophobia.", "Make them feel small." };
+    private List<string> fullText = new List<string> { "You are an evil psychiatrist. 'Your' patients have been", "institutionalized for extreme claustrophobia.", "Make them feel small." };
 
     // Start is called before the first frame update
     void Start()
