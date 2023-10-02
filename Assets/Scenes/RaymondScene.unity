@@ -123,6 +123,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1455948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1455950}
+  - component: {fileID: 1455949}
+  - component: {fileID: 1455951}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1455949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455948}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb31411835dd94a5aaeaab083c818cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taretVolume: 0.7
+--- !u!4 &1455950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.563905, y: 4.938044, z: 0.0012683398}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1455951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455948}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116265f4826db4b61a4d4e01be18945f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 0}
 --- !u!1 &16102480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,9 +1170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42faa98672bf3ac4d80bc4abc0a0f64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullText: You are an evil therapist. Torture your patients.
   currentText: {fileID: 554696795}
   gameState: {fileID: 1099901677}
+  order: 0
 --- !u!114 &554696795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,6 +1270,151 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554696792}
   m_CullTransparentMesh: 1
+--- !u!1 &640531419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640531421}
+  - component: {fileID: 640531420}
+  - component: {fileID: 640531422}
+  m_Layer: 0
+  m_Name: MusicManagerScuffed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &640531420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640531419}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afdbffa1255b747c9800d604e3adf4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicTracks: []
+  mainTheme: {fileID: 8300000, guid: 0cede54c64b124d28867c66cf4dc6774, type: 3}
+  gameStateMachine: {fileID: 1099901677}
+  musicSource: {fileID: 640531422}
+--- !u!4 &640531421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640531419}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.563905, y: 4.938044, z: 0.0012683398}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &640531422
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640531419}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &732198144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,6 +1561,21 @@ MonoBehaviour:
   gridSize: 10
   grid: {fileID: 732198144}
   sensor: {fileID: 1573284832}
+  onMoveCursor:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 748156600}
+        m_TargetAssemblyTypeName: ObjectPlacingSounds, Assembly-CSharp
+        m_MethodName: ObjectMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &748156595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,6 +1588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07340cece93a834ebda936fc12ec1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   cardPrefab: {fileID: 1220701037176361309, guid: b04362e4972d951449a9d9635e6f9c4c, type: 3}
   xOffset: 300
   yOffset: -550
@@ -2008,6 +2229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 824655541}
   scoreBar: {fileID: 1828012467}
+  sceneVolume: {fileID: 0}
+  paper: {fileID: 0}
 --- !u!114 &1099901673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,6 +2301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 1099901677}
   fade: {fileID: 1403413083}
+  fade2: {fileID: 0}
 --- !u!114 &1099901677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3836,6 +4060,8 @@ MonoBehaviour:
   folderButton: {fileID: 2049829911}
   returnButton: {fileID: 390053028}
   exitButton: {fileID: 1673274545}
+  patientStatus: {fileID: 0}
+  patientScore: {fileID: 0}
   isVisible: 0
 --- !u!1 &2070344841
 GameObject:
@@ -4209,3 +4435,5 @@ SceneRoots:
   - {fileID: 1006782941}
   - {fileID: 2140878258}
   - {fileID: 303478509}
+  - {fileID: 1455950}
+  - {fileID: 640531421}
