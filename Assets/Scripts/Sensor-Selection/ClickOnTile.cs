@@ -74,7 +74,7 @@ public class ClickOnTile : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit, 100) && (hit.collider.gameObject.tag == "TileMap"))
                 {
-                    gameObject.GetComponent<ObjectPlacingSounds>().ObjectMove();
+                   
 
                     Vector3 hitPoint = hit.point;
                     hitPoint /= gridIncrement;
@@ -84,8 +84,9 @@ public class ClickOnTile : MonoBehaviour
                     sensor.transform.position = new Vector3(rounded.x, 1.002f, rounded.z);
                     if (pRoundedPos != null && pRoundedPos != rounded)
                     {
+                        //gameObject.GetComponent<ObjectPlacingSounds>().ObjectMove();
                         onMoveCursor.Invoke();
-                        
+                    
                     }
                     pRoundedPos = rounded;
                 }
