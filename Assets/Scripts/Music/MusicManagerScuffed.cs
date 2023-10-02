@@ -38,4 +38,14 @@ public class MusicManagerScuffed : MonoBehaviour
         //musicSource.loop = true;
         musicSource.PlayOneShot(mainTheme, 0.7f);
     }
+
+    void transitionLevelTwo()
+    {
+
+    }
+
+    void transitionLevelThree()
+    {
+
+    }
 }
